@@ -12,6 +12,9 @@
         $number = 23; // if number don't use ""
         $float = 15.43783; // double or float, don't use string
 
+        $old = "year old";
+        $z = 21;
+
         $x = 15;
         $y = 5;
 
@@ -22,6 +25,9 @@
         echo "x - y = ", $x - $y , "<br>";
         echo "x * y = ", $x * $y , "<br>";
         echo "x / y = ", $x / $y , "<br>";
+
+        
+        echo "I am ".$z.$old."<br>";
         ?>
     </body>
 </html>
