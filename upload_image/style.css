@@ -82,3 +82,15 @@ a:hover
   font-size: 1rem;
   color: #03b939;
 }
+
+.error
+{
+  margin-bottom: 10px;
+  max-width: 600px;
+  width: 100%;
+  padding: 5px 10px;
+  border: 1px solid #a94442;
+  font-size: 1rem;
+  background: #f2dede;
+  color: #a94442;
+}

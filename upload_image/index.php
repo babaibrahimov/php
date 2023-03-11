@@ -4,10 +4,8 @@ require 'connection.php';
         $name = $_POST["name"];
         $about = $_POST["about"];
         if($_FILES["image"]["error"] === 4 ){
-            echo "
-            <script>
-                alert('Error');
-            </script>";
+            header("Location: index.php?error=Input areas can't be empty!");
+            exit();
         } else {
             $fileName = $_FILES['image']['name'];
             $fileSize = $_FILES['image']['size'];
@@ -17,10 +15,8 @@ require 'connection.php';
             $imageExtension = explode('.', $fileName);
             $imageExtension = strtolower(end($imageExtension));
             if(!in_array($imageExtension, $validImageExtension)){
-                echo "
-                <script>
-                    alert('Error, imageExtension');
-                </script>";
+            header("Location: index.php?error=Error, only '.jpg', '.jpeg', '.png' extension files");
+            exit();
             // } elseif($fileSize > 100000){
             //     echo "
             //     <script>
@@ -34,7 +30,7 @@ require 'connection.php';
                 $query = "INSERT into tb_upload_image VALUES('', '$name', '$about', '$newImageName')";
 
                 mysqli_query($conn, $query);
-                header("Location: index.php?success=file upload success");
+                header("Location: index.php?success=File Upload Success");
                 exit();
             }
         }
@@ -54,6 +50,9 @@ require 'connection.php';
     <form action="" method="post" autocomplete="off" enctype="multipart/form-data">
         <?php if(isset($_GET['success'])) { ?>
         <p class="success"><?php echo $_GET['success']; ?></p>
+        <?php } ?>
+        <?php if(isset($_GET['error'])) { ?>
+        <p class="error"><?php echo $_GET['error']; ?></p>
         <?php } ?>
         <input type="text" name="name" placeholder="Name">
         <input type="text" name="about" placeholder="about">
