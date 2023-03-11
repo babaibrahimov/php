@@ -54,9 +54,9 @@ require 'connection.php';
         <?php if(isset($_GET['error'])) { ?>
         <p class="error"><?php echo $_GET['error']; ?></p>
         <?php } ?>
-        <input type="text" name="name" placeholder="Name">
-        <input type="text" name="about" placeholder="about">
-        <input type="file" name="image" placeholder="image" accept=".jpg, .jpeg, .png">
+        <input type="text" name="name" placeholder="Name" required>
+        <input type="text" name="about" placeholder="about" required>
+        <input type="file" name="image" placeholder="image" accept=".jpg, .jpeg, .png" required>
         <button type="submit" name="submit">Submit</button>
     </form>
 
