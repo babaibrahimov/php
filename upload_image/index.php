@@ -50,7 +50,7 @@ require 'connection.php';
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Home Page</title>
 <!-- STYLE  -->
-<link rel="stylesheet" href="./default.css">
+<link rel="stylesheet" href="./style.css">
 <!-- ICON -->
 <link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
 <body>
