@@ -21,17 +21,17 @@ require 'connection.php';
                 <script>
                     alert('Error, imageExtension');
                 </script>";
-            } elseif($fileSize > 100000){
-                echo "
-                <script>
-                    alert('Error, file size too large');
-                </script>";
+            // } elseif($fileSize > 100000){
+            //     echo "
+            //     <script>
+            //         alert('Error, file size too large');
+            //     </script>";
             } else {
                 $newImageName = uniqid();
                 $newImageName .= '.'.$imageExtension;
 
                 move_uploaded_file($tmpName, 'img/'. $newImageName);
-                $query = "INSERT into tb_upload_image VALUES('', '$name', '$newImageName', '$about')";
+                $query = "INSERT into tb_upload_image VALUES('', '$name', '$about', '$newImageName')";
 
                 mysqli_query($conn, $query);
                 echo "
@@ -48,7 +48,7 @@ require 'connection.php';
 <html lang="en">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Dafault HTML 5</title>
+<title>Home Page</title>
 <!-- STYLE  -->
 <link rel="stylesheet" href="./default.css">
 <!-- ICON -->
@@ -62,5 +62,6 @@ require 'connection.php';
         <button type="submit" name="submit">Submit</button>
     </form>
 
+    <a href="display.php">Go to Display</a>
 </body>
 </html>
