@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Display</title>
 <!-- STYLE  -->
-<link rel="stylesheet" href="./default.css">
+<link rel="stylesheet" href="./display.css">
 <!-- ICON -->
 <link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
 <body>
@@ -22,6 +22,7 @@
 
     <?php endforeach; ?>
 </div>
+<a href="index.php">Home</a>
 
 </body>
 </html>

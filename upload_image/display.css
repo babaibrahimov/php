@@ -10,3 +10,47 @@
   scroll-behavior: smooth;
   font-family: 'Poppins', sans-serif;
 }
+
+body
+{
+  width: 100%;
+  min-height: 100vh;
+  background: linear-gradient(34deg, #81d63f, #32f218);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.wrapper
+{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  flex-wrap: wrap;
+}
+
+.wrapper img
+{
+  width: 350px;
+  height: 350px;
+  object-fit: cover;
+  margin: 8px;
+}
+
+a
+{
+  margin-top: 20px;
+  padding: 10px 20px;
+  background: #fff;
+  color: #000;
+  border: 2px solid #fff;
+  transition: .3s;
+  font-weight: 600;
+}
+
+a:hover
+{
+  background: transparent;
+  color: #fff;
+}
