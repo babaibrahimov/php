@@ -10,3 +10,63 @@
   scroll-behavior: smooth;
   font-family: 'Poppins', sans-serif;
 }
+
+body
+{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 100vh;
+  background: linear-gradient(338deg, #30c9b4, #22f662);
+}
+
+form
+{
+  max-width: 600px;
+  width: 100%;
+  padding: 30px 10px;
+  background: #fff;
+  border-radius: 8px;
+}
+
+form input
+{
+  display: block;
+  width: 100%;
+  padding: 4px 2px;
+  font-size: 1.1rem;
+  outline: none;
+  border: 1px solid #bfbfbf;
+  margin-top: 5px;
+}
+
+form button
+{
+  margin-top: 10px;
+  outline: none;
+  cursor: pointer;
+  font-size: 1rem;
+  padding: 6px 12px;
+  border: none;
+  background: #ff4500;
+  color: #fff;
+}
+
+a
+{
+  margin-top: 20px;
+  padding: 10px 20px;
+  background: #fff;
+  color: #000;
+  border: 2px solid #fff;
+  transition: .3s;
+  font-weight: 600;
+}
+
+a:hover
+{
+  background: transparent;
+  color: #fff;
+}
