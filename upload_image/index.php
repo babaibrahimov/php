@@ -34,11 +34,8 @@ require 'connection.php';
                 $query = "INSERT into tb_upload_image VALUES('', '$name', '$about', '$newImageName')";
 
                 mysqli_query($conn, $query);
-                echo "
-                <script>
-                    alert('Successful');
-                    document.location.href = 'display.php';
-                </script>";
+                header("Location: index.php?success=file upload success");
+                exit();
             }
         }
     }
@@ -54,8 +51,10 @@ require 'connection.php';
 <!-- ICON -->
 <link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
 <body>
-  
     <form action="" method="post" autocomplete="off" enctype="multipart/form-data">
+        <?php if(isset($_GET['success'])) { ?>
+        <p class="success"><?php echo $_GET['success']; ?></p>
+        <?php } ?>
         <input type="text" name="name" placeholder="Name">
         <input type="text" name="about" placeholder="about">
         <input type="file" name="image" placeholder="image" accept=".jpg, .jpeg, .png">

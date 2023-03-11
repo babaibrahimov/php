@@ -70,3 +70,15 @@ a:hover
   background: transparent;
   color: #fff;
 }
+
+.success
+{
+  margin-bottom: 10px;
+  max-width: 600px;
+  width: 100%;
+  padding: 5px 10px;
+  background: #95fab3;
+  border: 1px solid #22f662;
+  font-size: 1rem;
+  color: #03b939;
+}
