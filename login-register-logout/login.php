@@ -29,19 +29,22 @@ if(isset($_POST["submit"])){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <!-- STYLE  -->
-    <link rel="stylesheet" href="./login.css">
+    <link rel="stylesheet" href="./assets/login.css">
     <!-- ICON -->
     <link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
 </head>
 <body>
-    <h2>Login</h2>
-    <form action="" method="post" autocomplete="off">
-        <input type="text" name="usernamemail" id="usernamemail" placeholder="Username or E-mail" required value="">
-        <input type="password" name="password" id="password" placeholder="Password" required value="">
+    <div class="wrapper">
+        <h1>Login</h1>
+        <form action="" method="post" autocomplete="off">
+            <input type="text" name="usernamemail" id="usernamemail" placeholder="Username or E-mail" required value="">
+            <input type="password" name="password" id="password" placeholder="Password" required value="">
+    
+            <button type="submit" name="submit">Login</button>
+        </form>
+        
+        <p>Don't have an account? <a href="register.php">Register</a></p>
+    </div>
 
-        <button type="submit" name="submit">Login</button>
-    </form>
-
-    <p>Don't have an account? <a href="register.php">Register</a></p>
 </body>
 </html>
