@@ -9,21 +9,20 @@ if(isset($_POST["submit"])){
     $password = $_POST["password"];
     $confirmpassword = $_POST["confirmpassword"];
 
-    $duplicate = mysqli_query($conn, "SELECT * FROM tb_users WHERE username = '$username' OR email = '$email'");
+    $duplicate = mysqli_query($conn, "SELECT * FROM tb_users WHERE username = '$username'");
     if(mysqli_num_rows($duplicate) > 0){
-        // echo "<script> alert('Username or Email has already taken'); </script>";
-        header("Location: register.php?Username or Email has already taken");
+        header("Location: register.php?error=Username has already taken");
         exit();
     }
     else {
         if($password == $confirmpassword){
             $query =  "INSERT into tb_users VALUES ('', '$name', '$username', '$email', '$password')";
             mysqli_query($conn, $query);
-            echo "<script>alert('Success');</script>";
+            header("Location: register.php?success=Your account has been successfully created");
+            exit();
         } 
         else {
-            echo "<script> alert('Password Doesn't Match!'); </script>";
-            header("Location: register.php?Password doesn't match");
+            header("Location: register.php?error=Password doesn't match");
             exit();
         }
     }
@@ -46,6 +45,12 @@ if(isset($_POST["submit"])){
 <body>
     <div class="wrapper">
         <h1>Registration</h1>
+        <?php if(isset($_GET['success'])) { ?>
+        <p class="success"><?php echo $_GET['success']; ?></p>
+        <?php } ?>
+        <?php if(isset($_GET['error'])) { ?>
+        <p class="error"><?php echo $_GET['error']; ?></p>
+        <?php } ?>
         <form action="" method="post" autocomplete="off">
             <input type="text" name="name" id="name" placeholder="Full Name">
             <input type="text" name="username" id="username" placeholder="Username">
@@ -56,7 +61,7 @@ if(isset($_POST["submit"])){
             <button type="submit" name="submit">Register</button>
         </form>
         
-        <p>Already have an account? <a href="login.php">Login</a></p>
+        <p class="link">Already have an account? <a href="login.php">Login</a></p>
     </div>
 </body>
 </html>

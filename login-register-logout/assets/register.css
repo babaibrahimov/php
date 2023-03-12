@@ -79,7 +79,7 @@ body
     transition: .3s;
 }
 
-.wrapper p
+.wrapper .link
 {
     margin-top: 20px;
     color: #333;
@@ -87,15 +87,39 @@ body
     text-align: right;
 }
 
-.wrapper p a
+.wrapper .link a
 {
     color: #2f7ab7;
     font-weight: 700;
 }
 
-.wrapper p a:hover
+.wrapper .link a:hover
 {
     text-decoration: underline;
+}
+
+.success
+{
+  margin-bottom: 10px;
+  max-width: 600px;
+  width: 100%;
+  padding: 5px 10px;
+  background: #95fab3;
+  border: 1px solid #22f662;
+  font-size: 1rem;
+  color: #03b939;
+}
+
+.error
+{
+  margin-bottom: 10px;
+  max-width: 600px;
+  width: 100%;
+  padding: 5px 10px;
+  border: 1px solid #a94442;
+  font-size: 1rem;
+  background: #f2dede;
+  color: #a94442;
 }
 
 @media (max-width: 510px)
