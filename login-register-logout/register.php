@@ -9,10 +9,10 @@ if(isset($_POST["submit"])){
     $password = $_POST["password"];
     $confirmpassword = $_POST["confirmpassword"];
 
-    $duplicate = mysqli_query($conn, "SELECT * FROM tb_users WHERE username = '$username'");
+    $duplicate = mysqli_query($conn, "SELECT * FROM tb_users WHERE username = '$username' OR email = '$email'");
     if(mysqli_num_rows($duplicate) > 0){
         // echo "<script> alert('Username or Email has already taken'); </script>";
-        header("Location: register.php?Username has already taken");
+        header("Location: register.php?Username or Email has already taken");
         exit();
     }
     else {
@@ -39,22 +39,24 @@ if(isset($_POST["submit"])){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register</title>
     <!-- STYLE  -->
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./assets/register.css">
     <!-- ICON -->
     <link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
 </head>
 <body>
-    <h2>Registration</h2>
-    <form action="" method="post" autocomplete="off">
-        <input type="text" name="name" id="name" placeholder="Full Name">
-        <input type="text" name="username" id="username" placeholder="Username">
-        <input type="email" name="email" id="email" placeholder="E-mail">
-        <input type="password" name="password" id="password" placeholder="Password">
-        <input type="password" name="confirmpassword" id="confirmpassword" placeholder="Confirm Passsword">
-
-        <button type="submit" name="submit">Register</button>
-    </form>
-
-    <p>Already have an account? <a href="login.php">Login</a></p>
+    <div class="wrapper">
+        <h1>Registration</h1>
+        <form action="" method="post" autocomplete="off">
+            <input type="text" name="name" id="name" placeholder="Full Name">
+            <input type="text" name="username" id="username" placeholder="Username">
+            <input type="email" name="email" id="email" placeholder="E-mail">
+            <input type="password" name="password" id="password" placeholder="Password">
+            <input type="password" name="confirmpassword" id="confirmpassword" placeholder="Confirm Passsword">
+            
+            <button type="submit" name="submit">Register</button>
+        </form>
+        
+        <p>Already have an account? <a href="login.php">Login</a></p>
+    </div>
 </body>
 </html>
