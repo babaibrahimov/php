@@ -17,7 +17,8 @@ if(isset($_POST["submit"])){
             $query =  "INSERT INTO tb_users VALUES('', '$name', '$username', '$email', '$password')";
             mysqli_query($conn, $query);
             echo "<script>alert('Success');</script>";
-        } else {
+        } 
+        else {
             echo "<script> alert('Password Doesn't Match!'); </script>";
         }
     }
@@ -46,7 +47,7 @@ if(isset($_POST["submit"])){
         <input type="password" name="password" id="password" placeholder="Password">
         <input type="password" name="confirmpassword" id="confirmpassword" placeholder="Confirm Passsword">
 
-        <button type="submit">Register</button>
+        <button type="submit" name="submit">Register</button>
     </form>
 
     <p>Already have an account? <a href="login.php">Login</a></p>
