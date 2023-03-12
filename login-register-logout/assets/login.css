@@ -78,7 +78,7 @@ body
     transition: .3s;
 }
 
-.wrapper p
+.wrapper .link
 {
     margin-top: 20px;
     color: #333;
@@ -86,12 +86,24 @@ body
     text-align: right;
 }
 
-.wrapper p a
+.wrapper .link a
 {
     color: #ff4500;
 }
 
-.wrapper p a:hover
+.wrapper .link a:hover
 {
     text-decoration: underline;
+}
+
+.error
+{
+  margin-bottom: 6px;
+  width: 100%;
+  text-align: left;
+  padding: 5px 10px;
+  border: 1px solid #a94442;
+  font-size: 1rem;
+  background: #f2dede;
+  color: #a94442;
 }

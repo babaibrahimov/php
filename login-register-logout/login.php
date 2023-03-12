@@ -7,16 +7,24 @@ if(isset($_POST["submit"])){
     $password = $_POST["password"];
     $result =  mysqli_query($conn, "SELECT * FROM tb_users WHERE username = '$usernamemail' or email = '$usernamemail'");
     $row = mysqli_fetch_assoc($result);
-
-    if(mysqli_num_rows($result) > 0){
-        if($password = $row["password"]){
+    
+    if(mysqli_num_rows($result) === 1){
+        if($row['username'] === $usernamemail && $row['password'] === $password){
             $_SESSION["login"] = true;
+            $_SESSION["username"] = $username;
+            $_SESSION["password"] = $password;
             $_SESSION["id"] = $row["id"];
             header("Location: index.php");
         }
-    } else {
-        echo "<script>alert('Wrong Password');</script>";
-    }
+        elseif($row['username'] === $usernamemail || $row['password'] !== $password)
+        {
+        header('Location: login.php?error=Wrong Password');
+        exit();  
+        }
+        } else {
+            header('Location: login.php?error=No such account exists');
+            exit();
+        }
 }
 
 ?>
@@ -36,6 +44,9 @@ if(isset($_POST["submit"])){
 <body>
     <div class="wrapper">
         <h1>Login</h1>
+        <?php if(isset($_GET['error'])) { ?>
+        <p class="error"><?php echo $_GET['error']; ?></p>
+        <?php } ?>
         <form action="" method="post" autocomplete="off">
             <input type="text" name="usernamemail" id="usernamemail" placeholder="Username or E-mail" required value="">
             <input type="password" name="password" id="password" placeholder="Password" required value="">
@@ -43,7 +54,7 @@ if(isset($_POST["submit"])){
             <button type="submit" name="submit">Login</button>
         </form>
         
-        <p>Don't have an account? <a href="register.php">Register</a></p>
+        <p class="link">Don't have an account? <a href="register.php">Register</a></p>
     </div>
 
 </body>
