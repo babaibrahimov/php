@@ -19,12 +19,15 @@ require 'connection.php';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
     <!-- STYLE  -->
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./assets/style.css">
     <!-- ICON -->
     <link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
 </head>
 <body>
-    <h3>Welcome <?php echo $row["name"]; ?></h3>
-    <a href="logout.php">Logout</a>
+    <div class="wrapper">
+        <h3>Welcome <?php echo $row["name"]; ?></h3>
+        <a href="logout.php">Logout</a>
+
+    </div>
 </body>
 </html>
