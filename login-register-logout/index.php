@@ -1,6 +1,6 @@
 <?php
 
-require 'connect.php';
+require 'connection.php';
     if(!empty($_SESSION["id"])){
         $id = $_SESSION["id"];
         $result = mysqli_query($conn, "SELECT * FROM tb_users WHERE id = $id");
@@ -25,6 +25,6 @@ require 'connect.php';
 </head>
 <body>
     <h3>Welcome <?php echo $row["name"]; ?></h3>
-    <a href=logout.php"">Logout</a>
+    <a href="logout.php">Logout</a>
 </body>
 </html>

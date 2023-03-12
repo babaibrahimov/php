@@ -9,17 +9,22 @@ if(isset($_POST["submit"])){
     $password = $_POST["password"];
     $confirmpassword = $_POST["confirmpassword"];
 
-    $duplicate = mysqli_query($conn, "SELECT * FROM tb_users WHERE username = '$username' OR email = '$email'");
+    $duplicate = mysqli_query($conn, "SELECT * FROM tb_users WHERE username = '$username'");
     if(mysqli_num_rows($duplicate) > 0){
-        echo "<script> alert('Username or Email has already taken'); </script>";
-    } else {
+        // echo "<script> alert('Username or Email has already taken'); </script>";
+        header("Location: register.php?Username has already taken");
+        exit();
+    }
+    else {
         if($password == $confirmpassword){
-            $query =  "INSERT INTO tb_users VALUES('', '$name', '$username', '$email', '$password')";
+            $query =  "INSERT into tb_users VALUES ('', '$name', '$username', '$email', '$password')";
             mysqli_query($conn, $query);
             echo "<script>alert('Success');</script>";
         } 
         else {
             echo "<script> alert('Password Doesn't Match!'); </script>";
+            header("Location: register.php?Password doesn't match");
+            exit();
         }
     }
 }
