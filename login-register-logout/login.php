@@ -48,7 +48,7 @@ if(isset($_POST["submit"])){
         <p class="error"><?php echo $_GET['error']; ?></p>
         <?php } ?>
         <form action="" method="post" autocomplete="off">
-            <input type="text" name="usernamemail" id="usernamemail" placeholder="Username or E-mail" required value="">
+            <input type="text" name="usernamemail" id="usernamemail" placeholder="Username" required value="">
             <input type="password" name="password" id="password" placeholder="Password" required value="">
     
             <button type="submit" name="submit">Login</button>
