@@ -2,24 +2,24 @@
 <html>
 <head>
 <title>Index</title> 
+<link rel="stylesheet" href="./assets/css/style.css">
 </head>
 <body>
-	<div>
+	<div class="form">
 		<form method="POST" action="add.php">
-			<label>Username:</label><input type="text" name="username">
-			<label>Firstname:</label><input type="text" name="firstname">
-			<label>Lastname:</label><input type="text" name="lastname">
+			<label>Username:</label><input type="text" name="username" required>
+			<label>Firstname:</label><input type="text" name="firstname" required>
+			<label>Lastname:</label><input type="text" name="lastname" required>
 			<input type="submit" name="add">
 		</form>
 	</div>
-	<br>
-	<div>
+	<div class="table">
 		<table border="1">
 			<thead>
 				<th>Username</th>
 				<th>Firstname</th>
 				<th>Lastname</th>
-				<th></th>
+				<th>Edit/Delete</th>
 			</thead>
 			<tbody>
 				<?php
