@@ -8,15 +8,16 @@
 <html>
 <head>
 <title>Edit</title>
+<link rel="stylesheet" href="./assets/css/edit.css">
 </head>
 <body>
-	<h2>Edit</h2>
 	<form method="POST" action="update.php?id=<?php echo $id; ?>">
-		<label>Username:</label><input type="text" value="<?php echo $row['username']; ?>" name="username">
-		<label>Firstname:</label><input type="text" value="<?php echo $row['firstname']; ?>" name="firstname">
-		<label>Lastname:</label><input type="text" value="<?php echo $row['lastname']; ?>" name="lastname">
+		<h2>Edit</h2>
+		<label>Username:</label><input type="text" value="<?php echo $row['username']; ?>" name="username" spellcheck="false">
+		<label>Firstname:</label><input type="text" value="<?php echo $row['firstname']; ?>" name="firstname" spellcheck="false">
+		<label>Lastname:</label><input type="text" value="<?php echo $row['lastname']; ?>" name="lastname" spellcheck="false">
 		<input type="submit" name="submit">
-		<a href="index.php">Back</a>
+		<a href="index.php" class="back">Back</a>
 	</form>
 </body>
 </html>

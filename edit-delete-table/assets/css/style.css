@@ -93,7 +93,21 @@ th, td
     border: 1px solid #777;
     text-align: left;
     padding: 8px;
+    max-width: 150px;
 }
+
+td
+{
+    overflow-x: scroll;
+    resize: none;
+}
+
+td::-webkit-scrollbar
+{
+    width: 0px;
+    height: 0px;
+}
+
 
 tr:nth-child(even) {
     background-color: #ddd;
