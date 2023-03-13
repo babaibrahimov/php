@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Index</title>
+<title>Index</title> 
 </head>
 <body>
 	<div>
@@ -32,8 +32,8 @@
 							<td><?php echo $row['firstname']; ?></td>
 							<td><?php echo $row['lastname']; ?></td>
 							<td>
-								<a href="edit.php?id=<?php echo $row['userid']; ?>">Edit</a>
-								<a href="delete.php?id=<?php echo $row['userid']; ?>">Delete</a>
+								<a href="edit.php?id=<?php echo $row['id']; ?>">Edit</a>
+								<a href="delete.php?id=<?php echo $row['id']; ?>">Delete</a>
 							</td>
 						</tr>
 						<?php
