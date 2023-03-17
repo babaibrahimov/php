@@ -110,3 +110,25 @@ h3
     text-transform: uppercase;
     color: #a94442;
 }
+
+@media (max-width: 910px) {
+    body
+    {
+        padding: 30px 15px;
+    }
+}
+
+@media (max-width: 580px) {
+    th, td
+    {
+        max-width: 100px;
+        width: 100%;
+    }
+}
+
+@media (max-width: 450px) {
+    th, td
+    {
+        width: auto;
+    }
+}
