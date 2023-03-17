@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*
+{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+    list-style: none;
+    scroll-behavior: smooth;
+}
+
+
+.wrapper
+{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+}
+
+.textBx, .imgBx
+{
+    /* width: 50%; */
+    /* border: 1px solid #333; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: left;
+    margin: 10px;
+}
+
+
+.textBx h1
+{
+    font-size: 12rem;
+    line-height: 9rem;
+    display: flex;
+    align-items: center;
+    text-shadow: 4px 0px #222;
+    max-width: 420px;
+    width: 100%;
+    color: rgb(221, 64, 221);
+}
+
+.textBx h1 span
+{
+    font-size: 15rem;
+    color: rgb(241, 75, 75);
+    text-shadow: 6px 2px #222;
+}
+
+.textBx h4
+{
+    max-width: 420px;
+    width: 100%;
+    text-align: center;
+    margin-top: 12px;
+    font-size: 2.4rem;
+    text-transform: uppercase;
+    color: #222;
+}
+
+.textBx a
+{
+    padding: 8px 40px;
+    font-size: 1.5rem;
+    font-weight: 600;
+    border: 2px solid transparent;
+    background: rgb(241, 75, 75);
+    color: #fff;
+    border-radius: 3px;
+    transition: .3s;
+    animation: shake 2s infinite;
+}
+
+.textBx a:hover
+{
+    background: #fff;
+    color: rgb(241, 75, 75);
+    border-color: rgb(241, 75, 75);
+    animation: none;
+}
+
+.imgBx img
+{
+    width: 100%;
+    /* object-fit: cover; */
+}
+
+@keyframes shake
+{
+    10% {transform: scale(1.05) rotate(5deg);}
+    20% {transform: scale(1.05) rotate(-5deg);}
+    30% {transform: scale(1.05) rotate(5deg);}
+    40% {transform: none}
+}
+
+@media (max-width: 910px)
+{
+    .wrapper
+    {
+        flex-direction: column;
+        padding: 60px 30px;
+    }
+    .imgBx
+    {
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 450px)
+{
+    .wrapper
+    {
+        padding: 60px 10px;
+        text-align: center;
+
+    }
+    .textBx h1, .textBx h4
+    {
+        max-width: 350px;
+    }
+    .textBx h1
+    {
+        font-size: 9rem;
+        line-height: 9rem;
+    }
+    .textBx h1 span
+    {
+        font-size: 12rem;
+    }
+    .textBx h4
+    {
+        font-size: 2rem;
+    }
+}
