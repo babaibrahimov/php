@@ -96,3 +96,17 @@ thead
 {
     color: #ff4500;
 }
+
+h3
+{
+    max-width: 900px;
+    width: 100%;
+    padding: 20px 10px;
+    background: #f2dede;
+    border-radius: 8px;
+    margin-top: 15px;
+    text-align: center;
+    font-size: 40px;
+    text-transform: uppercase;
+    color: #a94442;
+}
