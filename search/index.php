@@ -19,7 +19,7 @@
     $smt->execute();
     $result=$smt->get_result();
     ?>
-    <table>
+    <table id="table-data">
         <thead>
             <tr>
                 <th>#</th>
