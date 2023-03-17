@@ -14,7 +14,6 @@
 </head>
 <body>
     <div class="search-area">
-        <label for="search">Search Data:</label>
         <input type="text" name="search" placeholder="Search" id="search">
     </div>
     <hr>

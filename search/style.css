@@ -63,3 +63,36 @@ thead
     background: #ff4500;
     color: #fff;
 }
+
+.search-area
+{
+    background: #fff;
+    padding: 30px 10px;
+    max-width: 900px;
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.search-area input
+{
+    display: block;
+    width: 100%;
+    padding: 4px;
+    font-size: 1rem;
+    outline: none;
+    border: 1px solid #bfbfbf;
+}
+
+.search-area input:focus
+{
+    border-color: #ff4500;
+}
+
+.search-area input:focus::placeholder
+{
+    color: #ff4500;
+}
