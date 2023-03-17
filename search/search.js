@@ -3,10 +3,10 @@ $(document).ready(function(){
         var search = $(this).val();
         $.ajax({
             url:'action.php',
-            method: 'post',
+            method:'post',
             data:{query:search},
             success:function(response){
-                $("table-data").html(response);
+                $("#table-data").html(response);
             }
         })
     })
