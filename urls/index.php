@@ -8,6 +8,6 @@
 </head>
 <body>
     <h1>Hello, World</h1>
-    <a href="about.php">About</a>
+    <a href="about">About</a>
 </body>
 </html>
