@@ -1,3 +1,4 @@
 RewriteEngine On
 
 RewriteRule ^home index.php [NC,L]
+RewriteRule ^about about.php [NC,L]
