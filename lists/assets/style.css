@@ -20,6 +20,7 @@ body
     align-items: center;
     flex-direction: column;
     background: linear-gradient(58deg, #37bf9a, #67c6f0);
+    padding: 30px 0px;
 }
 
 .wrapper
@@ -141,5 +142,5 @@ body
     text-decoration: none;
     color: #fff;
     width: 100%;
+    text-transform: capitalize;
 }
-
