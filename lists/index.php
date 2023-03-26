@@ -1,3 +1,19 @@
+<?php
+// include db connection
+include 'connect.php';
+
+if(isset($_POST['submit'])){
+    $name = $_POST['name'];
+    $link = $_POST['link'];
+    // insert data
+
+    mysqli_query($conn,"INSERT INTO `tb_lists`( `name`, `link`) VALUES ('$name','$link')");
+    header("location:index.php?success=Success!");
+}
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,15 +31,21 @@
     <div class="wrapper">
         <div class="adding-area">
             <form action="" method="post" autocomplete="off" enctype="multipart/form-data">
-                <input type="text" placeholder="Add Objects...">
-                <button type="submit">Add</button>
+                <input type="text" placeholder="Name here" name="name" required>
+                <input type="text" placeholder="Link here" name="link" required>
+                <button type="submit" name="submit">Add</button>
             </form>
         </div>
         <div class="output-area">
             <div class="boxes">
-                <div class="box">
-                    <a href="https://www.github.com" target="_blank">Github</a>
-                </div>
+                <?php
+                $rows = mysqli_query($conn, "SELECT * FROM tb_lists ORDER BY id DESC");
+                ?>
+                <?php foreach($rows as $row) : ?>
+                    <div class="box">
+                        <a href="<?php echo$row['link']; ?>" target="_blank"><?php echo$row['name']; ?></a>
+                    </div>
+                <?php endforeach; ?>    
             </div>
         </div>
     </div>
