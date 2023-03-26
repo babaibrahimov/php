@@ -30,6 +30,9 @@ if(isset($_POST['submit'])){
 <body>
     <div class="wrapper">
         <div class="adding-area">
+        <?php if(isset($_GET['success'])) { ?>
+        <p class="success"><?php echo $_GET['success']; ?></p>
+        <?php } ?>
             <form action="" method="post" autocomplete="off" enctype="multipart/form-data">
                 <input type="text" placeholder="Name here" name="name" required>
                 <input type="text" placeholder="Link here" name="link" required>
